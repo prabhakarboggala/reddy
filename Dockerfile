@@ -32,7 +32,7 @@ RUN apk add bash wget curl perl make g++ libev-dev patch git openssl-dev openssl
 #In Alpine Linux execinfo.h is not present by default so to add this header file run the following command
 RUN apk add libexecinfo-dev
 
-#change the present working directory
+#change the present working directory 
 RUN cd home
 #clone the EclipseOMR repository 
 RUN git clone https://github.com/prabhakarboggala/omr.git
