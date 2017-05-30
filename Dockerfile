@@ -33,7 +33,7 @@ RUN apk add bash wget curl perl make g++ libev-dev patch git openssl-dev openssl
 RUN apk add libexecinfo-dev
 
 #change the present working directory 
-WORKDIR /home
+#WORKDIR /home
 #clone the EclipseOMR repository 
 RUN git clone https://github.com/prabhakarboggala/omr.git
 WORKDIR /omr
