@@ -1,6 +1,6 @@
 # FROM alpine:latest
 FROM alpine:latest
-
+# Adding all Required libraries to Alpine Linux for compiling  Eclipse OMR 
 RUN apk update \
     && apk upgrade \
     && apk add --no-cache bash git openssh \
@@ -11,12 +11,12 @@ RUN apk update \
     && apk add --update g++ \
     && rm /var/cache/apk/* \
     && cd home
-
+# cloning musl-libc 
 RUN git clone git://git.musl-libc.org/musl \
     && cd musl \
     && ./configure && make install \
     && cd /home
-
+#cloning Eclipse OMR 
 RUN git clone https://github.com/prabhakarboggala/omr.git \
     && cd omr
     && make -f run_configure.mk SPEC=linux_x86-64 OMRGLUE=./example/glue \
