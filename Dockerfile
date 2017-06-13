@@ -18,7 +18,7 @@ RUN git clone git://git.musl-libc.org/musl \
     && cd /home
 #cloning Eclipse OMR 
 RUN git clone https://github.com/prabhakarboggala/omr.git \
-    && cd omr
+    && cd omr \
     && make -f run_configure.mk SPEC=linux_x86-64 OMRGLUE=./example/glue \
     && make -f run_configure.mk SPEC=linux_x86-64 OMRGLUE=./example/glue 'EXTRA_CONFIGURE_ARGS=--disable-OMR_PORT_NUMA_SUPPORT' clean all \
     && make
